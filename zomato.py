@@ -28,4 +28,4 @@ if selected_cuisines:
     st.subheader("Reviews")
     st.table(selected_reviews[["Reviewer", "Rating", "Review"]])
 else:
-    st.info("Select cuisines to see top restaurants.")
+    st.info("Pilih Bandara untuk melihat review dan comment tiap bandara.")
