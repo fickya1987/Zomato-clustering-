@@ -10,18 +10,18 @@ data_cluster = pd.read_csv('data_cluster.csv', encoding='ISO-8859-1')
 st.title("Angkasa Pura 2 Airport Review Dashboard 02")
 
 # Filter cuisines
-selected_cuisines = st.multiselect("Pilih Bandara", data_cluster.columns[8:52])
+selected_cuisines = st.multiselect("Pilih Provinsi atau kota", data_cluster.columns[8:52])
 if selected_cuisines:
     # Filter restaurants based on selected cuisines
     filtered_restaurants = data_cluster[data_cluster.apply(lambda row: any(cuisine in row["Cuisines"] for cuisine in selected_cuisines), axis=1)]
 
     # Display top 5 restaurants based on average ratings
-    st.subheader("Top 5 Comments untuk Bandara AP2")
+    st.subheader("Bandara AP2 di area")
     top_restaurants = filtered_restaurants.sort_values(by="Rating", ascending=False).head(5)
     st.table(top_restaurants[["Name", "Rating", "Timings","Cuisines"]])
 
     # Restaurant details
-    selected_restaurant = st.selectbox("Select a Restaurant", top_restaurants["Name"])
+    selected_restaurant = st.selectbox("Pilih Bandara", top_restaurants["Name"])
     selected_reviews = reviews1[reviews1["Restaurant"] == selected_restaurant].head(5)
 
     # Display reviews
