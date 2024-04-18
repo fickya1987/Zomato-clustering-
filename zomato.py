@@ -2,8 +2,8 @@ import pandas as pd
 import streamlit as st
 
 #Reading two files
-reviews1 = pd.read_csv('reviews1.csv', encoding='ISO-8859-1')
-data_cluster = pd.read_csv('data_cluster.csv', encoding='ISO-8859-1')
+reviews1 = pd.read_csv('reviews1_01.csv', encoding='ISO-8859-1')
+data_cluster = pd.read_csv('data_cluster_01.csv', encoding='ISO-8859-1')
 
 
 # Streamlit app
