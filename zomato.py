@@ -10,7 +10,7 @@ data_cluster = pd.read_csv('data_cluster.csv', encoding='ISO-8859-1')
 st.title("Angkasa Pura 2 Airport Review Dashboard 02")
 
 # Filter cuisines
-selected_cuisines = st.multiselect("Select Cuisines", data_cluster.columns[8:52])
+selected_cuisines = st.multiselect("Pilih Bandara", data_cluster.columns[8:52])
 if selected_cuisines:
     # Filter restaurants based on selected cuisines
     filtered_restaurants = data_cluster[data_cluster.apply(lambda row: any(cuisine in row["Cuisines"] for cuisine in selected_cuisines), axis=1)]
