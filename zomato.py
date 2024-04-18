@@ -21,7 +21,7 @@ if selected_cuisines:
     st.table(top_restaurants[["Name", "Rating", "Timings","Cuisines"]])
 
     # Restaurant details
-    selected_restaurant = st.selectbox("Pilih Bandara", top_restaurants["Name"])
+    selected_restaurant = st.selectbox("Pilih Provinsi atau kota", top_restaurants["Name"])
     selected_reviews = reviews1[reviews1["Restaurant"] == selected_restaurant].head(5)
 
     # Display reviews
