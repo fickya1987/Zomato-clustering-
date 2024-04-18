@@ -18,7 +18,7 @@ if selected_cuisines:
     # Display top 5 restaurants based on average ratings
     st.subheader("Bandara AP2 di area")
     top_restaurants = filtered_restaurants.sort_values(by="Rating", ascending=False).head(5)
-    st.table(top_restaurants[["Name", "Rating", "Timings","Cuisines"]])
+    st.table(top_restaurants[["Name", "Rating", "Timings"]])
 
     # Restaurant details
     selected_restaurant = st.selectbox("Pilih Bandara", top_restaurants["Name"])
